@@ -1,7 +1,7 @@
 // Polina Pavlova 260ADB159
 // https://github.com/chrffl/calc-lab-home
 // Compile with: gcc -O2 -Wall -Wextra -std=c17 -o calc calc.c -lm
-// Resources used: Claude (Anthropic), conversation: https://claude.ai/chat/968c9f9f-ca62-4ff8-be0d-128a241819fe ; Claude (Anthropic), second conversation about the last tasks: <link> ; cppreference.com (opendir/readdir, stat, mkdir, strtod, pow)
+// Resources used: Claude (Anthropic), conversation: https://claude.ai/chat/968c9f9f-ca62-4ff8-be0d-128a241819fe ; Claude (Anthropic); cppreference.com (opendir/readdir, stat, mkdir, strtod, pow)
 
 // AI (Claude): asked to help write the program step by step, grade by grade.
 //   Stage "grade 4-5": file reading, tokenizer with positions, + and -,
@@ -9,7 +9,6 @@
 //   Stage "grade 6-7": * and /, division by zero, parentheses.
 //   Stage "grade 8 + 10": ** (right-associative), comment lines, floats.
 //   Stage "grade 9": full command line, see the comment above main().
-//   Generated with Claude, then tested and read through by me.
 
 // mkdir() is POSIX, not plain C17, so we ask the headers to declare it.
 #define _POSIX_C_SOURCE 200809L
@@ -613,3 +612,16 @@ int main(int argc, char **argv) {
     // they return 1 only if a file can't be read or written.
     return dir ? process_dir(dir, outdir) : process_file(input, outdir);
 }
+
+
+
+
+// AI (Claude), note about the language of the prompts:
+//   I also used Claude to generate parts of this code in a conversation
+//   written in my native language (Ukrainian), so the prompts there are
+//   not in English. Below are my prompts from that conversation, translated
+//   into English, and what each one produced:
+//   1. Structure all the tasks and give me explanation to them shortly - grades 4-5, grades 8 and etc.
+// 2. Help me organize all the grades test that I've done and check if there/s any problems with formatting.
+//   All generated code was tested with test file that you send us and cli.sh and read
+//   through by me. I learned all the necessary instruments and commands to understand the task. There is still some points that I need to understand. 
